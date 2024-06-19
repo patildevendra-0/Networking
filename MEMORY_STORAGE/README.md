@@ -1,1 +1,1 @@
-<img src="./datatypes.png" alt="Image Alt Text">
+<img src="./Memory.png" alt="Image Alt Text">
