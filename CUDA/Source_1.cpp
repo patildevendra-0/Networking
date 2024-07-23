@@ -50,6 +50,30 @@
                                         Sometimes, workers need to wait until another worker finishes their task before proceeding. This is synchronization. For example, you can’t fit the tires until the car body is painted. Similarly, 
                                         CUDA threads need to synchronize to ensure tasks are completed in the correct order.
 
+                                8. Streams (Multiple Assembly Lines)
+                                                Concept : Streams allow different tasks to be executed concurrently, much like having multiple assembly lines in a factory.
+                                                Analogy : Imagine the factory has several parallel assembly lines (streams), each building a different car model simultaneously. This way, the factory can produce multiple cars at the same time, increasing efficiency and throughput.
+                                                
+                                9. Kernel Launch (Assigning Tasks)
+                                                Concept : A kernel launch is the process of sending tasks to the GPU.
+                                                Analogy : When the manager (CPU) gives instructions to the workers (GPU cores), it's like assigning specific tasks to different teams on the assembly line. Each instruction set is a kernel launch, telling workers what to do.
+                                
+                                10. Occupancy (Worker Utilization)
+                                                Concept : Occupancy refers to how effectively the GPU cores are utilized.
+                                                Analogy : In the factory, occupancy is the ratio of active workers to the total available workers. High occupancy means most workers are busy, while low occupancy means many workers are idle. Efficient management aims for high occupancy to ensure all workers are utilized effectively.
+                                
+                                11. Warp Divergence (Misaligned Tasks)
+                                                Concept : Warp divergence occurs when threads within the same warp (group of 32 threads) follow different execution paths.
+                                                Analogy : Imagine a team of workers (warp) is given a task, but some workers need to paint while others need to fit tires. If they can't work simultaneously on their specific tasks, they need to wait for each other, causing delays. This misalignment reduces efficiency.
+                                
+                                12. Memory Coalescing (Efficient Memory Access)
+                                                Concept : Memory coalescing is the efficient access of global memory by threads in a warp.
+                                                Analogy : Think of workers (threads) needing parts from the warehouse (global memory). If they all go one by one to fetch their parts, it’s slow. But if they group their requests efficiently, they can get all parts in fewer trips, speeding up the process.
+                                
+                                13. Unified Memory (Single Storage Area)
+                                                Concept : Unified memory allows CPU and GPU to share the same memory space, simplifying data management.
+                                                Analogy : Instead of having separate storage areas for parts and tools for the manager (CPU) and workers (GPU cores), there is a single, shared storage area. Both the manager and workers can access the same parts without the need to transfer items back and forth.
+
 
 */
 //-------------------------------------------------------------------------------------------------------------------------//
